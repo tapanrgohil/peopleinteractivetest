@@ -23,6 +23,7 @@ import kotlinx.android.synthetic.main.item_user.view.tvName
 import kotlinx.android.synthetic.main.item_user.view.tvStatus
 import kotlinx.android.synthetic.main.item_user_list.view.*
 
+//Simple list view
 class UserListAdapter(
     private val onButtonClicked: (User) -> Unit
 ) : RecyclerView.Adapter<UserListAdapter.UserViewHolder>() {
@@ -45,9 +46,7 @@ class UserListAdapter(
                 tvAddress.text = user.first
                 tvGender.text = user.gender.name
                 tvDob.text = user.date.toReadableDate()
-                ivUserImage?.load(user.picture) {
-                    diskCachePolicy(CachePolicy.ENABLED)
-                }
+                ivUserImage?.load(user.picture)
                 when (user.requestStatus) {
                     is RequestStatus.PENDING -> {
                         tvStatus.text = ""

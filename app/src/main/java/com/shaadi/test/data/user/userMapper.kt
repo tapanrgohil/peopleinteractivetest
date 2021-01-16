@@ -6,6 +6,7 @@ import com.shaadi.test.ui.user.model.User
 import javax.inject.Inject
 import javax.inject.Singleton
 
+//Simple mapper class to map user related classes from api to entity and entity to ui and vise versa
 
 @Singleton
 class UserMapper @Inject constructor() {

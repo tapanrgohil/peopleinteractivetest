@@ -6,7 +6,9 @@
     android:background="?attr/selectableItemBackground"
     android:foreground="?attr/selectableItemBackground"
     app:cardBackgroundColor="@android:color/white"
-    app:cardCornerRadius="8dp"
+    app:cardCornerRadius="12dp"
+    app:strokeWidth="1px"
+    app:strokeColor="@color/grey_40"
     app:cardPreventCornerOverlap="false"
     app:cardUseCompatPadding="true">
 
@@ -25,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:background="@color/grey_40"
+            android:background="@color/grey_10"
             android:orientation="vertical"
             android:padding="16dp">
 

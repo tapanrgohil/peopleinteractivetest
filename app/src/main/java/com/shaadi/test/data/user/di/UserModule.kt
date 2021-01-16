@@ -8,6 +8,7 @@ import dagger.hilt.android.components.ApplicationComponent
 import retrofit2.Retrofit
 import javax.inject.Singleton
 
+//Dagger module for user repository
 @Module(includes = [UserRepositoryModule::class])
 @InstallIn(ApplicationComponent::class)
 object UserModule {

@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.shaadi.test.R
 import com.shaadi.test.data.core.Status
 import com.shaadi.test.data.user.local.RequestStatus
@@ -20,6 +21,8 @@ import com.yuyakaido.android.cardstackview.Direction
 import com.yuyakaido.android.cardstackview.SwipeableMethod
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_user_card.*
+import kotlinx.android.synthetic.main.fragment_user_card.pbLoading
+import kotlinx.android.synthetic.main.fragment_user_list.*
 
 @AndroidEntryPoint
 class UserCardFragment : Fragment(R.layout.fragment_user_card) {
@@ -28,12 +31,18 @@ class UserCardFragment : Fragment(R.layout.fragment_user_card) {
     private val userListViewModel by viewModels<UserCardViewModel>()
 
     private val userAdapter = UserCardAdapter()
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initUI()
         attachObserver()
         userListViewModel.getUsersList()
+        savedInstanceState?.let {
+            restoreCardState(it)
+        }
+    }
+
+    private fun restoreCardState(bundle: Bundle) {
+        (cardStackView.layoutManager as? CardStackLayoutManager)?.onRestoreInstanceState(bundle)
     }
 
     private fun attachObserver() {
@@ -151,6 +160,11 @@ class UserCardFragment : Fragment(R.layout.fragment_user_card) {
             it.requestStatus = RequestStatus.REJECTED
             userListViewModel.updateUserRequest(it)
         }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        (cardStackView.layoutManager as? CardStackLayoutManager)?.onSaveInstanceState()
+        super.onSaveInstanceState(outState)
     }
 
 }

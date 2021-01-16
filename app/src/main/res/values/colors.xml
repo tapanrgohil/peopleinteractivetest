@@ -10,4 +10,5 @@
 
     <color name="snack_error">#bf1e3a</color>
     <color name="grey_40">#66969696</color>
+    <color name="grey_10">#1A969696</color>
 </resources>

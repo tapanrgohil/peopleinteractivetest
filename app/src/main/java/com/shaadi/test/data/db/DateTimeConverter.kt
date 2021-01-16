@@ -3,6 +3,7 @@ package com.shaadi.test.data.db
 import androidx.room.TypeConverter
 import java.util.*
 
+//Room converter for Database
 class DateTimeConverter {
 
     @TypeConverter

@@ -3,7 +3,7 @@ package com.shaadi.test.data.db
 import androidx.room.TypeConverter
 import com.shaadi.test.data.user.local.Gender
 
-
+//Room converter for  Gender in database
 class GenderConverter {
 
     @TypeConverter

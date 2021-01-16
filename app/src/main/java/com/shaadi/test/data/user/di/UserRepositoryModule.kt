@@ -13,6 +13,7 @@ import dagger.hilt.android.components.ApplicationComponent
 import javax.inject.Singleton
 import kotlin.contracts.ExperimentalContracts
 
+//Dagger module for user repository
 @Module
 @InstallIn(ApplicationComponent::class)
 abstract class UserRepositoryModule {

@@ -21,6 +21,8 @@ import com.shaadi.test.util.toReadableDate
 import com.shaadi.test.util.visible
 import kotlinx.android.synthetic.main.item_user.view.*
 
+
+//Tinder like card
 class UserCardAdapter() : RecyclerView.Adapter<UserCardAdapter.UserViewHolder>() {
 
     private var firstCommit: Boolean = false

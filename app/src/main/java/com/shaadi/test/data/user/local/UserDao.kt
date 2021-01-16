@@ -16,6 +16,7 @@ abstract class UserDao : BaseDao<UserEntity> {
 
     //Try to insert-> there will be 2 case if item is already
     // there with same id it will update else insert new one
+    //Currently we are not updating but still methods are ther from my base code
     @Transaction
     open fun upsertUsers(users: List<UserEntity>) {
         val insertResult = insertAll(users)

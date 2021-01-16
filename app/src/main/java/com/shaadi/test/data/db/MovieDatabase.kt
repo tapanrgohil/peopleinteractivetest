@@ -15,7 +15,6 @@ import com.shaadi.test.data.user.local.UserEntity
 )
 @TypeConverters(DateTimeConverter::class, GenderConverter::class, StatusConverter::class)
 abstract class UserDatabase : RoomDatabase() {
-
     abstract fun userDao(): UserDao
 
 }

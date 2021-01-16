@@ -12,7 +12,7 @@ class StatusConverter {
     }
 
     @TypeConverter
-    fun toGender(requsetStatus: Int): RequestStatus {
+    fun toStatus(requsetStatus: Int): RequestStatus {
         return when (requsetStatus) {
             RequestStatus.PENDING.index -> RequestStatus.PENDING
             RequestStatus.ACCEPTED.index -> RequestStatus.ACCEPTED
